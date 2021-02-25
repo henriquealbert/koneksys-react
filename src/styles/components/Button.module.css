@@ -9,6 +9,11 @@
   font-weight: 500;
 }
 
+.btn:focus, .btn:active {
+  box-shadow: 0 0 0 1px var(--active);
+  outline: none;
+}
+
 .primary {
   background: var(--accent);
   color: var(--white);
@@ -19,6 +24,7 @@
   color: var(--white);
   opacity: 0.2;
   cursor: not-allowed;
+  box-shadow: none;
 }
 
 .secondary {
@@ -31,4 +37,9 @@
   background: var(--white);
   color: var(--accent);
   border: 1px solid var(--border-gray);
+}
+
+.icon {
+  background: transparent;
+  padding: 0;
 }
