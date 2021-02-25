@@ -2,9 +2,10 @@ import { CgClose } from 'react-icons/cg';
 
 import { Button } from 'components/Button';
 import { useModal } from 'contexts/ModalContext';
-import { StepToolbar } from './StepToolbar';
+import { StepToolbar } from './Steps/StepToolbar';
 
 import styles from 'styles/components/Modal.module.css';
+import { UploadData } from './Steps/UploadData';
 
 export function Modal() {
   const { closeModalOverlay, modalRef, closeModal } = useModal();
@@ -26,7 +27,7 @@ export function Modal() {
 
         <StepToolbar />
 
-        <div className={styles.modalContent}></div>
+        <UploadData />
       </section>
     </div>
   );
