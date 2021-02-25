@@ -1,11 +1,12 @@
-import { Header } from 'components/Header';
+import { ModalProvider } from 'contexts/ModalContext';
+import { Home } from 'pages/Home';
 
 import 'styles/global.css';
 
 export function App() {
   return (
-    <main className="container">
-      <Header />
-    </main>
+    <ModalProvider>
+      <Home />
+    </ModalProvider>
   );
 }
