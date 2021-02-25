@@ -1,4 +1,70 @@
 .stepToolbar {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+ display: grid;
+ grid-template-columns: repeat(4, 1fr);
+}
+
+.icon {
+  margin-right: 0.5rem;
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.step {
+  font-size: 0.813rem;
+	text-align: center;
+	color: var(--black);
+	margin: 0 3px;
+	position: relative;
+	background-color: var(--light-gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1.875rem;
+}
+
+.step:after,
+.step:before {
+  content: " ";
+	position: absolute;
+	top: 0;
+	right: -14px;
+	width: 0;
+	height: 0;
+	border-top: 16px solid transparent;
+	border-bottom: 14px solid transparent;
+	border-left: 14px solid var(--light-gray);
+	z-index: 2;
+}
+
+.step:before {
+	right: auto;
+	left: 0;
+	border-left: 14px solid var(--white);
+	z-index: 0;
+}
+
+.step:first-child {
+margin-left: 0;
+}
+
+.step:first-child:before {
+border: none;
+}
+
+.step:last-child:after {
+  border: none;
+}
+
+.step:last-child {
+  margin-right: 0;
+
+}
+
+.step.current {
+  color: var(--white);
+  background-color: var(--accent);
+}
+
+.step.current:after {
+	border-left: 14px solid var(--accent);
 }
