@@ -1,0 +1,34 @@
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  border: 0;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.primary {
+  background: var(--accent);
+  color: var(--white);
+}
+
+.primary:disabled {
+  background: var(--black);
+  color: var(--white);
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
+.secondary {
+  background: var(--white);
+  color: var(--black);
+  border: 1px solid var(--border-gray);
+}
+
+.outline {
+  background: var(--white);
+  color: var(--accent);
+  border: 1px solid var(--border-gray);
+}
