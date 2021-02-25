@@ -1,0 +1,56 @@
+.overlay {
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.16);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.modalWrapper {
+  width: 41.125rem;
+  height: 28rem;
+  background: var(--white);
+  box-shadow: 0px 9px 26px #0000003D;
+  border-radius: 1rem;
+
+  position: relative;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.modalHeader h2 {
+  font-size: 1.375rem;
+  font-weight: 500;
+}
+
+.closeModal {
+  cursor: pointer;
+  width: 1.25rem;
+  height: 1.25rem;
+  padding: 0;
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalFooter {
+  padding: 2rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}

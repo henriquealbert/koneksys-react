@@ -1,16 +1,17 @@
-import styles from 'styles/components/Header.module.css';
 import { Button } from './Button';
+import { useModal } from 'contexts/ModalContext';
+
+import styles from 'styles/components/Header.module.css';
 
 export function Header() {
+  const { openModal } = useModal();
+
   return (
     <header className={styles.header}>
       <h1>My Team</h1>
-      <Button variant="primary">Import Team</Button>
-      <Button variant="primary" disabled>
-        Continue
+      <Button variant="primary" type="button" onClick={openModal}>
+        Import Team
       </Button>
-      <Button variant="secondary">Back</Button>
-      <Button variant="outline">Re-Upload File</Button>
     </header>
   );
 }

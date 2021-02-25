@@ -1,9 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 :root {
   --white: #FFFFFF;
   --light-gray: #F8F8F8;
@@ -16,6 +10,12 @@
   --accent: #2F54D0;
   --favorite: #ECBA17;
   --background: #FDFDFD;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 @media(max-width: 1080px) {
@@ -33,6 +33,7 @@
 body {
   background: var(--background);
   color: var(--black);
+  font-weight: 500;
 }
 
 body, button, input, textarea {
@@ -47,6 +48,15 @@ button {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+h1 {
+  font-size: 1.875rem;
+  line-height: 2.875rem;
+}
+
+ul {
+  list-style: none;
 }
 
 .container {
