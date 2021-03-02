@@ -68,3 +68,12 @@ border: none;
 .step.current:after {
 	border-left: 14px solid var(--accent);
 }
+
+.step.currentError {
+  color: var(--white);
+  background-color: var(--error);
+}
+
+.step.currentError:after {
+	border-left: 14px solid var(--error);
+}
