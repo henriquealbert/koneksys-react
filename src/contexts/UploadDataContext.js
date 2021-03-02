@@ -5,8 +5,7 @@ const UploadDataContext = createContext();
 
 const UploadDataProvider = ({ children }) => {
   const [fileName, setFileName] = useState('');
-  const [headers, setHeaders] = useState([]);
-  const [body, setBody] = useState([]);
+  const [data, setData] = useState([]);
   const [error, setError] = useState(false);
 
   const onChangeFile = async (rawFile) => {
@@ -14,14 +13,15 @@ const UploadDataProvider = ({ children }) => {
 
     if (result.errors.length === 0) {
       setFileName(rawFile.name);
-      setHeaders(result.data.splice(0, 1));
-      setBody(result.data);
+      setData(result.data);
       setError(false);
     } else {
       setFileName(rawFile.name);
       setError(true);
     }
   };
+
+  console.log(data);
 
   const [teamName, setTeamName] = useState('');
 
@@ -35,8 +35,8 @@ const UploadDataProvider = ({ children }) => {
         onChangeFile,
         error,
         fileName,
-        headers,
-        body,
+        data,
+        setData,
         onChangeTeamName,
         teamName
       }}

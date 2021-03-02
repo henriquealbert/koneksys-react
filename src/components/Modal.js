@@ -1,14 +1,29 @@
 import { CgClose } from 'react-icons/cg';
+import { useState } from 'react';
 
 import { Button } from 'components/Button';
 import { useModal } from 'contexts/ModalContext';
 import { StepToolbar } from 'components/StepToolbar';
 import { UploadData } from 'components/UploadData';
+import { PlayerStatus } from './PlayerStatus';
 
 import styles from 'styles/components/Modal.module.css';
 
 export function Modal() {
   const { closeModalOverlay, modalRef, closeModal } = useModal();
+
+  const [activeSteps, setActiveSteps] = useState(['Upload Data']);
+  const [currentStep, setCurrentStep] = useState('Upload Data');
+
+  const handleNextStep = (label) => {
+    setCurrentStep(label);
+    setActiveSteps((prev) => [...prev, label]);
+  };
+
+  const handlePreviousStep = (label) => {
+    setCurrentStep(label);
+    setActiveSteps((prev) => prev.filter((item) => item === label));
+  };
 
   return (
     <div className={styles.overlay} onClick={closeModalOverlay} ref={modalRef}>
@@ -25,9 +40,20 @@ export function Modal() {
           </Button>
         </header>
 
-        <StepToolbar />
+        <StepToolbar activeSteps={activeSteps} />
 
-        <UploadData />
+        {currentStep === 'Upload Data' ? (
+          <UploadData handleNextStep={handleNextStep} />
+        ) : currentStep === 'Player Status' ? (
+          <PlayerStatus
+            handleNextStep={handleNextStep}
+            handlePreviousStep={handlePreviousStep}
+          />
+        ) : currentStep === 'Favorite' ? (
+          'Favorite'
+        ) : (
+          'none'
+        )}
       </section>
     </div>
   );

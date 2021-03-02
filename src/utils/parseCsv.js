@@ -4,7 +4,7 @@ export const parseCsv = async (file) => {
   if (!file.name.includes('.csv')) return;
 
   const text = await file.text();
-  const result = parse(text);
+  const result = parse(text, { header: true });
 
   Object.entries(result.data).forEach(([, array]) => {
     Object.entries(array).forEach(([, value]) => {

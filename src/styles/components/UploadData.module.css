@@ -1,5 +1,5 @@
 .wrapper {
-  padding: 2rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -8,13 +8,6 @@
 
 .footer {
   align-self: flex-end;
-}
-
-.content h2 {
-  font-size: 0.875rem;
-  font-weight: 500;
-  line-height: 1.313rem;
-  margin-bottom: 1.375rem;
 }
 
 .inputWrapper p {

@@ -1,0 +1,11 @@
+.select select {
+  height: 100%;
+  padding: 0.5rem;
+  border: none;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 500;
+  outline: none;
+}
+
+

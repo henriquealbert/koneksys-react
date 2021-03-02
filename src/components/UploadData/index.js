@@ -5,7 +5,7 @@ import { FileWrapper } from './FileWrapper';
 
 import styles from 'styles/components/UploadData.module.css';
 
-export function UploadData() {
+export function UploadData({ handleNextStep }) {
   const { onChangeFile, fileName, error, teamName } = useUploadData();
 
   const onChange = (e) => {
@@ -14,8 +14,8 @@ export function UploadData() {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.content}>
-        <h2>Upload Data</h2>
+      <div>
+        <h3>Upload Data</h3>
 
         {fileName ? (
           <FileWrapper />
@@ -31,7 +31,12 @@ export function UploadData() {
         {error ? (
           <CustomFileInput label="Re-Upload File" onChange={onChange} />
         ) : (
-          <Button variant="primary" type="button" disabled={!teamName}>
+          <Button
+            variant="primary"
+            type="button"
+            disabled={!teamName}
+            onClick={() => handleNextStep('Player Status')}
+          >
             Continue
           </Button>
         )}
