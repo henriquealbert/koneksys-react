@@ -21,12 +21,17 @@ const UploadDataProvider = ({ children }) => {
     }
   };
 
-  console.log(data);
-
   const [teamName, setTeamName] = useState('');
 
   const onChangeTeamName = (e) => {
     setTeamName(e.target.value);
+  };
+
+  const [favorite, setFavorite] = useState('');
+  console.log(favorite);
+
+  const handleFavoriteChange = (item) => {
+    setFavorite(item['Player Name']);
   };
 
   return (
@@ -38,7 +43,9 @@ const UploadDataProvider = ({ children }) => {
         data,
         setData,
         onChangeTeamName,
-        teamName
+        teamName,
+        favorite,
+        handleFavoriteChange
       }}
     >
       {children}

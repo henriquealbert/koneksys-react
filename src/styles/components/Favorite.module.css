@@ -1,0 +1,37 @@
+.favorite {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 22.063rem;
+  width: 100%;
+}
+
+.favoriteFooter {
+  align-self: flex-end;
+  margin-top: auto;
+  display: flex;
+}
+.favoriteFooter button:first-of-type {
+  margin-right: 1rem;
+}
+
+.favorite table td:last-child {
+  padding: 0.5rem 1rem;
+}
+
+.currentFavorite {
+  background: var(--light-gray);
+}
+
+.currentFavorite td {
+  border-top: 1px solid var(--favorite);
+  border-bottom: 1px solid var(--favorite);
+}
+
+.currentFavorite td:first-child {
+  border-left: 1px solid var(--favorite);
+}
+
+.currentFavorite td:last-child {
+  border-right: 1px solid var(--favorite);
+}

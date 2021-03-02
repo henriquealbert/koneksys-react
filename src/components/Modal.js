@@ -6,6 +6,7 @@ import { useModal } from 'contexts/ModalContext';
 import { StepToolbar } from 'components/StepToolbar';
 import { UploadData } from 'components/UploadData';
 import { PlayerStatus } from './PlayerStatus';
+import { Favorite } from './Favorite';
 
 import styles from 'styles/components/Modal.module.css';
 
@@ -50,9 +51,12 @@ export function Modal() {
             handlePreviousStep={handlePreviousStep}
           />
         ) : currentStep === 'Favorite' ? (
-          'Favorite'
+          <Favorite
+            handleNextStep={handleNextStep}
+            handlePreviousStep={handlePreviousStep}
+          />
         ) : (
-          'none'
+          'cpmplete'
         )}
       </section>
     </div>
