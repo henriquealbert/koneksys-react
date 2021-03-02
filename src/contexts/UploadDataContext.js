@@ -21,17 +21,34 @@ const UploadDataProvider = ({ children }) => {
     }
   };
 
+  // Team name
   const [teamName, setTeamName] = useState('');
 
   const onChangeTeamName = (e) => {
     setTeamName(e.target.value);
   };
 
+  // Favorite Player
   const [favorite, setFavorite] = useState('');
-  console.log(favorite);
 
   const handleFavoriteChange = (item) => {
     setFavorite(item['Player Name']);
+  };
+
+  // Count
+  const countSummary = () => {
+    let activeArray = [];
+
+    data.map((item) => {
+      activeArray.push(item.Status);
+    });
+
+    const countObj = activeArray.reduce((previous, current) => {
+      previous[current] = (previous[current] || 0) + 1;
+      return previous;
+    }, {});
+
+    return countObj;
   };
 
   return (
@@ -45,7 +62,8 @@ const UploadDataProvider = ({ children }) => {
         onChangeTeamName,
         teamName,
         favorite,
-        handleFavoriteChange
+        handleFavoriteChange,
+        countSummary
       }}
     >
       {children}

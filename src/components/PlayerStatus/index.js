@@ -58,7 +58,7 @@ export const PlayerStatus = ({ handleNextStep, handlePreviousStep }) => {
         <Button
           variant="secondary"
           type="button"
-          onClick={() => handlePreviousStep('Upload Data')}
+          onClick={() => handlePreviousStep('Upload Data', 'Player Status')}
         >
           Back
         </Button>

@@ -27,7 +27,7 @@ export const Favorite = ({ handlePreviousStep, handleNextStep }) => {
               <tr
                 key={index}
                 className={
-                  favorite === item['Player Name'] && styles.currentFavorite
+                  favorite === item['Player Name'] ? styles.currentFavorite : ''
                 }
               >
                 <td>
@@ -51,7 +51,7 @@ export const Favorite = ({ handlePreviousStep, handleNextStep }) => {
         <Button
           variant="secondary"
           type="button"
-          onClick={() => handlePreviousStep('Player Status')}
+          onClick={() => handlePreviousStep('Player Status', 'Favorite')}
         >
           Back
         </Button>

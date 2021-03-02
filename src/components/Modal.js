@@ -7,6 +7,7 @@ import { StepToolbar } from 'components/StepToolbar';
 import { UploadData } from 'components/UploadData';
 import { PlayerStatus } from './PlayerStatus';
 import { Favorite } from './Favorite';
+import { Complete } from './Complete';
 
 import styles from 'styles/components/Modal.module.css';
 
@@ -18,12 +19,12 @@ export function Modal() {
 
   const handleNextStep = (label) => {
     setCurrentStep(label);
-    setActiveSteps((prev) => [...prev, label]);
+    setActiveSteps([...activeSteps, label]);
   };
 
-  const handlePreviousStep = (label) => {
-    setCurrentStep(label);
-    setActiveSteps((prev) => prev.filter((item) => item === label));
+  const handlePreviousStep = (previous, current) => {
+    setCurrentStep(previous);
+    setActiveSteps((prev) => prev.filter((item) => item !== current));
   };
 
   return (
@@ -56,7 +57,7 @@ export function Modal() {
             handlePreviousStep={handlePreviousStep}
           />
         ) : (
-          'cpmplete'
+          <Complete handlePreviousStep={handlePreviousStep} />
         )}
       </section>
     </div>

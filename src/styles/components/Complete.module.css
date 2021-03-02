@@ -1,0 +1,42 @@
+.complete {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 22.063rem;
+  width: 100%;
+}
+
+.completeFooter {
+  align-self: flex-end;
+  margin-top: auto;
+  display: flex;
+}
+.completeFooter button:first-of-type {
+  margin-right: 1rem;
+}
+
+.summaryContainer {
+  padding: 0 1rem;
+}
+
+.summaryContainer  span {
+  color: var(--label);
+  font-size: 0.688rem;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+}
+
+.summaryContainer p {
+  font-size: 0.875rem;
+}
+
+.summaryTop {
+  margin-bottom: 2rem;
+}
+
+.summaryTop, .summaryBottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+
