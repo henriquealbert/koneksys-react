@@ -17,10 +17,6 @@
    🏆 <a href="#">My Team Data</a>
 </h2>
 
-<h3 align="center">
-    A list of all My Team Data
-</h3>
-
 ---
 
 <!-- TABLE OF CONTENTS -->
