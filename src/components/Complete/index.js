@@ -3,7 +3,13 @@ import { useUploadData } from 'contexts/UploadDataContext';
 import styles from 'styles/components/Complete.module.css';
 
 export const Complete = ({ handlePreviousStep }) => {
-  const { fileName, teamName, favorite, countSummary } = useUploadData();
+  const {
+    fileName,
+    teamName,
+    favorite,
+    countSummary,
+    generateMainTable
+  } = useUploadData();
 
   const summaryTop = [
     { id: 1, label: 'Data', value: fileName },
@@ -47,7 +53,7 @@ export const Complete = ({ handlePreviousStep }) => {
         >
           Back
         </Button>
-        <Button variant="primary" type="button">
+        <Button variant="primary" type="button" onClick={generateMainTable}>
           Confirm
         </Button>
       </div>

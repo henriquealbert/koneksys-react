@@ -1,6 +1,6 @@
 import { Button } from 'components/Button';
 import { CustomSelect } from 'components/CustomSelect';
-import { ModalTable } from 'components/ModalTable';
+import { CustomTable } from 'components/CustomTable';
 import { useUploadData } from 'contexts/UploadDataContext';
 
 import styles from 'styles/components/PlayerStatus.module.css';
@@ -18,7 +18,7 @@ export const PlayerStatus = ({ handleNextStep, handlePreviousStep }) => {
   return (
     <div className={styles.playerStatus}>
       <h3>Player Status</h3>
-      <ModalTable>
+      <CustomTable>
         <thead>
           <tr>
             <th>Player</th>
@@ -53,7 +53,7 @@ export const PlayerStatus = ({ handleNextStep, handlePreviousStep }) => {
             );
           })}
         </tbody>
-      </ModalTable>
+      </CustomTable>
       <div className={styles.playerStatusFooter}>
         <Button
           variant="secondary"

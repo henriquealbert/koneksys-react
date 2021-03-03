@@ -45,6 +45,7 @@
 .tableContent td:last-child {
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
+  border-right: 1px solid var(--border-gray);
   padding: 0;
   height: 100%;
 }

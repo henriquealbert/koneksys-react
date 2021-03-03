@@ -1,0 +1,20 @@
+.mainTableData  {
+  margin-top: 2rem;
+}
+
+.currentFavorite {
+  background: var(--light-gray);
+}
+
+.currentFavorite td {
+  border-top: 1px solid var(--favorite);
+  border-bottom: 1px solid var(--favorite);
+}
+
+.currentFavorite td:first-child {
+  border-left: 1px solid var(--favorite);
+}
+
+.currentFavorite td:last-child {
+  border-right: 1px solid var(--favorite);
+}

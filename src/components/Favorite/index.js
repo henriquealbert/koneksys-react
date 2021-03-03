@@ -1,5 +1,5 @@
 import { Button } from 'components/Button';
-import { ModalTable } from 'components/ModalTable';
+import { CustomTable } from 'components/CustomTable';
 import { useUploadData } from 'contexts/UploadDataContext';
 import { CustomRadioInput } from 'components/CustomRadioInput';
 
@@ -10,8 +10,8 @@ export const Favorite = ({ handlePreviousStep, handleNextStep }) => {
 
   return (
     <div className={styles.favorite}>
-      <h3>Favorite</h3>
-      <ModalTable>
+      <h3>Favorite Player</h3>
+      <CustomTable>
         <thead>
           <tr>
             <th></th>
@@ -46,7 +46,7 @@ export const Favorite = ({ handlePreviousStep, handleNextStep }) => {
             );
           })}
         </tbody>
-      </ModalTable>
+      </CustomTable>
       <div className={styles.favoriteFooter}>
         <Button
           variant="secondary"

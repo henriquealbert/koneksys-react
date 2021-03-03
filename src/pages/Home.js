@@ -1,6 +1,6 @@
 import { Header } from 'components/Header';
+import { MainTableData } from 'components/MainTableData';
 import { Modal } from 'components/Modal';
-
 import { useModal } from 'contexts/ModalContext';
 
 export function Home() {
@@ -10,7 +10,9 @@ export function Home() {
     <div className="container">
       <Header />
       {showModal && <Modal />}
-      <main>{/* <TableData /> */}</main>
+      <main>
+        <MainTableData />
+      </main>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import { createContext, useContext, useState } from 'react';
 import { parseCsv } from 'utils/parseCsv';
+import { useModal } from './ModalContext';
 
 const UploadDataContext = createContext();
 
@@ -51,6 +52,17 @@ const UploadDataProvider = ({ children }) => {
     return countObj;
   };
 
+  // Main Table
+  const { closeModal } = useModal();
+  const [mainTableData, setMainTableData] = useState([]);
+
+  console.log(mainTableData);
+
+  const generateMainTable = () => {
+    setMainTableData(data);
+    closeModal();
+  };
+
   return (
     <UploadDataContext.Provider
       value={{
@@ -63,7 +75,9 @@ const UploadDataProvider = ({ children }) => {
         teamName,
         favorite,
         handleFavoriteChange,
-        countSummary
+        countSummary,
+        generateMainTable,
+        mainTableData
       }}
     >
       {children}
